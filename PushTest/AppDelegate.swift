@@ -49,5 +49,28 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     completionHandler([.alert, .sound, .badge])
   }
+  
+  func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    defer {
+      completionHandler()
+    }
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let rootVC: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+    let rootNav = UINavigationController(rootViewController: rootVC)
+    rootNav.navigationBar.prefersLargeTitles = true
+    window?.rootViewController = rootNav
+
+    guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else { return }
+    let payload = response.notification.request.content
+
+    if let storyboardID = payload.userInfo["storyboardID"] as? String{
+      if storyboardID == "present" {
+        rootVC.presentPressed("")
+      } else if storyboardID == "navigation" {
+        rootVC.performSegue(withIdentifier: "toNavigation", sender: nil)
+      }
+    }
+  }
 }
 
