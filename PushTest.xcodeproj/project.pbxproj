@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4049A9CF2301461400F029CA /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049A9CE2301461400F029CA /* NavViewController.swift */; };
+		4049A9D1230146FA00F029CA /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049A9D0230146FA00F029CA /* PresentViewController.swift */; };
 		40AB5FE822FBDD4F0005578A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AB5FE722FBDD4F0005578A /* AppDelegate.swift */; };
 		40AB5FEA22FBDD4F0005578A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AB5FE922FBDD4F0005578A /* ViewController.swift */; };
 		40AB5FED22FBDD4F0005578A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AB5FEB22FBDD4F0005578A /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4049A9CE2301461400F029CA /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		4049A9D0230146FA00F029CA /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		40AB5FE422FBDD4F0005578A /* PushTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AB5FE722FBDD4F0005578A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40AB5FE922FBDD4F0005578A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4049A9CD230145F900F029CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40AB5FE922FBDD4F0005578A /* ViewController.swift */,
+				4049A9CE2301461400F029CA /* NavViewController.swift */,
+				4049A9D0230146FA00F029CA /* PresentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		40AB5FDB22FBDD4F0005578A = {
 			isa = PBXGroup;
 			children = (
@@ -55,9 +69,9 @@
 		40AB5FE622FBDD4F0005578A /* PushTest */ = {
 			isa = PBXGroup;
 			children = (
+				4049A9CD230145F900F029CA /* Controller */,
 				40AB5FF922FBDDB40005578A /* PushTest.entitlements */,
 				40AB5FE722FBDD4F0005578A /* AppDelegate.swift */,
-				40AB5FE922FBDD4F0005578A /* ViewController.swift */,
 				40AB5FEB22FBDD4F0005578A /* Main.storyboard */,
 				40AB5FEE22FBDD500005578A /* Assets.xcassets */,
 				40AB5FF022FBDD500005578A /* LaunchScreen.storyboard */,
@@ -143,6 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AB5FEA22FBDD4F0005578A /* ViewController.swift in Sources */,
+				4049A9CF2301461400F029CA /* NavViewController.swift in Sources */,
+				4049A9D1230146FA00F029CA /* PresentViewController.swift in Sources */,
 				40AB5FE822FBDD4F0005578A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
