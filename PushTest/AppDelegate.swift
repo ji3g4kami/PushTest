@@ -13,8 +13,6 @@ import UserNotifications
 class AppDelegate: UIResponder {
 
   var window: UIWindow?
-  
-  
 
 }
 
@@ -41,6 +39,18 @@ extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let token = deviceToken.reduce("") { $0 + String(format: "%02x", $1)}
     print(token)
+  }
+  
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    guard let imageUrl = userInfo["imageUrl"] as? String,
+    let url = URL(string: imageUrl) else {
+      completionHandler(.noData)
+      return
+    }
+    if let rootVC = window?.rootViewController?.children.first as? ViewController {
+      rootVC.chaneCustomImage(imageUrl: url)
+      completionHandler(.newData)
+    }
   }
 
 }
