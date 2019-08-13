@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import Firebase
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
 
   var window: UIWindow?
+  let gcmMessageIDKey = "gcm.message_id"
 
 }
 
 
-extension AppDelegate: UIApplicationDelegate {
+extension AppDelegate: UIApplicationDelegate, MessagingDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // `requestAuthorization` runs off the main queue
@@ -33,7 +35,22 @@ extension AppDelegate: UIApplicationDelegate {
       }
     }
     
+    FirebaseApp.configure()
+    Messaging.messaging().delegate = self
     return true
+  }
+  
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    print("Firebase registration token: \(fcmToken)")
+    
+    let dataDict:[String: String] = ["token": fcmToken]
+    NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    // TODO: If necessary send token to application server.
+    // Note: This callback is fired at each app startup and whenever a new token is generated.
+  }
+  
+  func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+    print("Message Data:", remoteMessage.appData)
   }
   
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -42,6 +59,13 @@ extension AppDelegate: UIApplicationDelegate {
   }
   
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    if let messageID = userInfo[gcmMessageIDKey] {
+      print("Message ID: \(messageID)")
+    }
+    
+    // Print full message.
+    print(userInfo)
+    
     guard let imageUrl = userInfo["imageUrl"] as? String,
     let url = URL(string: imageUrl) else {
       completionHandler(.noData)
@@ -57,6 +81,21 @@ extension AppDelegate: UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    
+    let userInfo = notification.request.content.userInfo
+    
+    // With swizzling disabled you must let Messaging know about the message, for Analytics
+    // Messaging.messaging().appDidReceiveMessage(userInfo)
+    
+    // Print message ID.
+    if let messageID = userInfo[gcmMessageIDKey] {
+      print("Message ID: \(messageID)")
+    }
+    
+    // Print full message.
+    print(userInfo)
+    
+    // Change this to your preferred presentation option
     completionHandler([.alert, .sound, .badge])
   }
   
@@ -64,6 +103,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     defer {
       completionHandler()
     }
+    
+    let userInfo = response.notification.request.content.userInfo
+    // Print message ID.
+    if let messageID = userInfo[gcmMessageIDKey] {
+      print("Message ID: \(messageID)")
+    }
+    
+    // Print full message.
+    print(userInfo)
     
     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     let rootVC: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController

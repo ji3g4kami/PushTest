@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4040DD62230265D5004B109C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4040DD61230265D5004B109C /* GoogleService-Info.plist */; };
 		4049A9CF2301461400F029CA /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049A9CE2301461400F029CA /* NavViewController.swift */; };
 		4049A9D1230146FA00F029CA /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049A9D0230146FA00F029CA /* PresentViewController.swift */; };
 		40AB5FE822FBDD4F0005578A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AB5FE722FBDD4F0005578A /* AppDelegate.swift */; };
@@ -14,9 +15,12 @@
 		40AB5FED22FBDD4F0005578A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AB5FEB22FBDD4F0005578A /* Main.storyboard */; };
 		40AB5FEF22FBDD500005578A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40AB5FEE22FBDD500005578A /* Assets.xcassets */; };
 		40AB5FF222FBDD500005578A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40AB5FF022FBDD500005578A /* LaunchScreen.storyboard */; };
+		75853CEF1423A26B68E727A2 /* Pods_PushTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD37F8348F2435AFE992311 /* Pods_PushTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19A9A39E1D1F3085EC580C7C /* Pods-PushTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushTest.release.xcconfig"; path = "Target Support Files/Pods-PushTest/Pods-PushTest.release.xcconfig"; sourceTree = "<group>"; };
+		4040DD61230265D5004B109C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4049A9CE2301461400F029CA /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		4049A9D0230146FA00F029CA /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		40AB5FE422FBDD4F0005578A /* PushTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +31,8 @@
 		40AB5FF122FBDD500005578A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40AB5FF322FBDD500005578A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40AB5FF922FBDDB40005578A /* PushTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushTest.entitlements; sourceTree = "<group>"; };
+		5CD37F8348F2435AFE992311 /* Pods_PushTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PushTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD8AF50A1C90EE6F377A4203 /* Pods-PushTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushTest.debug.xcconfig"; path = "Target Support Files/Pods-PushTest/Pods-PushTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,12 +40,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75853CEF1423A26B68E727A2 /* Pods_PushTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3223B7789768D79DA20C4DBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CD37F8348F2435AFE992311 /* Pods_PushTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4049A9CD230145F900F029CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +70,8 @@
 			children = (
 				40AB5FE622FBDD4F0005578A /* PushTest */,
 				40AB5FE522FBDD4F0005578A /* Products */,
+				CBF44A9A188C07B7270D4D2C /* Pods */,
+				3223B7789768D79DA20C4DBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,9 +92,20 @@
 				40AB5FEB22FBDD4F0005578A /* Main.storyboard */,
 				40AB5FEE22FBDD500005578A /* Assets.xcassets */,
 				40AB5FF022FBDD500005578A /* LaunchScreen.storyboard */,
+				4040DD61230265D5004B109C /* GoogleService-Info.plist */,
 				40AB5FF322FBDD500005578A /* Info.plist */,
 			);
 			path = PushTest;
+			sourceTree = "<group>";
+		};
+		CBF44A9A188C07B7270D4D2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD8AF50A1C90EE6F377A4203 /* Pods-PushTest.debug.xcconfig */,
+				19A9A39E1D1F3085EC580C7C /* Pods-PushTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40AB5FF622FBDD500005578A /* Build configuration list for PBXNativeTarget "PushTest" */;
 			buildPhases = (
+				926E6C13121AC752E31C8C89 /* [CP] Check Pods Manifest.lock */,
 				40AB5FE022FBDD4F0005578A /* Sources */,
 				40AB5FE122FBDD4F0005578A /* Frameworks */,
 				40AB5FE222FBDD4F0005578A /* Resources */,
+				628AF04C11BB64F71FCE61F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,12 +177,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AB5FF222FBDD500005578A /* LaunchScreen.storyboard in Resources */,
+				4040DD62230265D5004B109C /* GoogleService-Info.plist in Resources */,
 				40AB5FEF22FBDD500005578A /* Assets.xcassets in Resources */,
 				40AB5FED22FBDD4F0005578A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		628AF04C11BB64F71FCE61F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushTest/Pods-PushTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PushTest/Pods-PushTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PushTest/Pods-PushTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		926E6C13121AC752E31C8C89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PushTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40AB5FE022FBDD4F0005578A /* Sources */ = {
@@ -306,6 +379,7 @@
 		};
 		40AB5FF722FBDD500005578A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD8AF50A1C90EE6F377A4203 /* Pods-PushTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PushTest/PushTest.entitlements;
@@ -326,6 +400,7 @@
 		};
 		40AB5FF822FBDD500005578A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19A9A39E1D1F3085EC580C7C /* Pods-PushTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PushTest/PushTest.entitlements;
